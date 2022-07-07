@@ -16,15 +16,15 @@ export default {
   },
 };
 
-const Template = (args) => ({
+const Template = (args, { argTypes }) => ({
   components: { AkiButton },
   setup() {
     return {
-      args,
+      ...args,
     };
   },
   template: `
-    <AkiButton v-bind="args" @click="click">あきボタン</AkiButton>
+    <AkiButton :color="color" @click="click">あきボタン</AkiButton>
   `,
 });
 
